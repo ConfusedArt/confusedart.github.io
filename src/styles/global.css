@@ -1,0 +1,237 @@
+/* Global variables */
+:root {
+	font-family: 'JetBrains Mono', monospace;
+
+	/* Colors */
+	--gray-0: #ffffff;
+	--gray-50: #f3f4f7;
+	--gray-100: #e3e6ee;
+	--gray-200: #c3cadb;
+	--gray-300: #a3acc8;
+	--gray-400: #8490b5;
+	--gray-500: #6474a2;
+	--gray-600: #505d84;
+	--gray-700: #3d4663;
+	--gray-800: #283044;
+	--gray-900: #141925;
+	--gray-999-basis: 225, 31%, 5%;
+	--gray-999: #090b11;
+
+	--accent-light: #07137e;
+	--accent-regular: #4e5eef;
+	--accent-dark: #9ba2e1;
+	--accent-overlay: hsla(236, 89%, 67%, 0.33);
+	--accent-subtle-overlay: hsla(230, 60%, 34%, 0.33);
+	--accent-text-over: var(--gray-0);
+
+	--link-color: var(--accent-dark);
+
+	/* Gradients */
+	--gradient-stop-1: var(--accent-light);
+	--gradient-stop-2: var(--accent-regular);
+	--gradient-stop-3: var(--accent-dark);
+	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
+	--gradient-accent: linear-gradient(150deg,
+			var(--gradient-stop-1),
+			var(--gradient-stop-2),
+			var(--gradient-stop-3));
+	--gradient-orange: linear-gradient(180deg, rgba(230, 255, 0, 255), rgba(100, 108, 27, 255));
+	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
+
+	/* Shadows */
+	--shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
+		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
+	--shadow-md: 0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
+		0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
+	--shadow-lg: 0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
+		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
+
+	/* Text Sizes */
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-md: 1.125rem;
+	--text-lg: 1.25rem;
+	--text-xl: 1.625rem;
+	--text-2xl: 2.125rem;
+	--text-3xl: 2.625rem;
+	--text-4xl: 3.5rem;
+	--text-5xl: 4.5rem;
+
+	/* Fonts */
+	--font-body: 'JetBrains Mono', monospace;
+	--font-brand: 'JetBrains Mono', monospace;
+
+	/* Transitions */
+	--theme-transition: 0.2s ease-in-out;
+
+	/* Custom  Scrollbar */
+	::-webkit-scrollbar {
+		width: 0.5rem;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #ffffff00;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--gradient-orange);
+		border-radius: 5px;
+	}
+}
+
+html,
+body {
+	height: 100%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%22640%22%20height%3D%22480%22%20viewBox%3D%220%200%20640%20480%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cstyle%20type%3D%22text%2Fcss%22%3E%20line%20%7B%20vector-effect%3A%20non-scaling-stroke%3B%20stroke%3A%20%23ECFF38%3B%20stroke-linecap%3A%20round%3B%20stroke-width%3A%2030.01px%3B%20%7D%20%3C%2Fstyle%3E%20%3Cline%20x1%3D%2238.9624%22%20y1%3D%22-165.5514%22%20x2%3D%2250.1205%22%20y2%3D%22-213.012%22%20stroke-opacity%3D%220.05%22%20%2F%3E%20%3Cline%20x1%3D%22478.0596%22%20y1%3D%22257.5266%22%20x2%3D%22492.3077%22%20y2%3D%22196.9231%22%20stroke-opacity%3D%220.55%22%20%2F%3E%20%3Cline%20x1%3D%22243.8228%22%20y1%3D%22-122.7954%22%20x2%3D%22258.1443%22%20y2%3D%22-183.7113%22%20stroke-opacity%3D%220.56%22%20%2F%3E%20%3Cline%20x1%3D%22-68.1872%22%20y1%3D%22335.6961%22%20x2%3D%22-54.6341%22%20y2%3D%22278.0488%22%20stroke-opacity%3D%220.45%22%20%2F%3E%20%3Cline%20x1%3D%22286.0163%22%20y1%3D%22529.7654%22%20x2%3D%22298.4753%22%20y2%3D%22476.7713%22%20stroke-opacity%3D%220.27%22%20%2F%3E%20%3Cline%20x1%3D%22394.9783%22%20y1%3D%22691.7271%22%20x2%3D%22412.9032%22%20y2%3D%22615.4839%22%20stroke-opacity%3D%220.95%22%20%2F%3E%20%3Cline%20x1%3D%22538.4777%22%20y1%3D%22284.9882%22%20x2%3D%22552.6531%22%20y2%3D%22224.6939%22%20stroke-opacity%3D%220.54%22%20%2F%3E%20%3Cline%20x1%3D%22105.7549%22%20y1%3D%22527.3906%22%20x2%3D%22121.105%22%20y2%3D%22462.0994%22%20stroke-opacity%3D%220.69%22%20%2F%3E%20%3Cline%20x1%3D%22502.5364%22%20y1%3D%22298.339%22%20x2%3D%22517.8022%22%20y2%3D%22233.4066%22%20stroke-opacity%3D%220.68%22%20%2F%3E%20%3Cline%20x1%3D%22146.9816%22%20y1%3D%22541.755%22%20x2%3D%22158.6555%22%20y2%3D%22492.1008%22%20stroke-opacity%3D%220.12%22%20%2F%3E%20%3Cline%20x1%3D%2244.0306%22%20y1%3D%22454.2266%22%20x2%3D%2259.1304%22%20y2%3D%22390.0%22%20stroke-opacity%3D%220.66%22%20%2F%3E%20%3Cline%20x1%3D%22-12.6654%22%20y1%3D%22347.8349%22%20x2%3D%22-0.6897%22%20y2%3D%22296.8966%22%20stroke-opacity%3D%220.18%22%20%2F%3E%20%3Cline%20x1%3D%22508.2259%22%20y1%3D%22568.8005%22%20x2%3D%22521.9802%22%20y2%3D%22510.297%22%20stroke-opacity%3D%220.48%22%20%2F%3E%20%3Cline%20x1%3D%22518.1452%22%20y1%3D%22186.1652%22%20x2%3D%22531.7647%22%20y2%3D%22128.2353%22%20stroke-opacity%3D%220.46%22%20%2F%3E%20%3Cline%20x1%3D%22453.4694%22%20y1%3D%2269.0421%22%20x2%3D%22470.9434%22%20y2%3D%22-5.283%22%20stroke-opacity%3D%220.91%22%20%2F%3E%20%3Cline%20x1%3D%22476.4346%22%20y1%3D%22524.8854%22%20x2%3D%22494.8344%22%20y2%3D%22446.6225%22%20stroke-opacity%3D%220.99%22%20%2F%3E%20%3Cline%20x1%3D%22445.7084%22%20y1%3D%22-169.5764%22%20x2%3D%22459.1304%22%20y2%3D%22-226.6667%22%20stroke-opacity%3D%220.43%22%20%2F%3E%20%3Cline%20x1%3D%22351.149%22%20y1%3D%22337.7977%22%20x2%3D%22363.8356%22%20y2%3D%22283.8356%22%20stroke-opacity%3D%220.31%22%20%2F%3E%20%3Cline%20x1%3D%22398.1982%22%20y1%3D%22-215.1538%22%20x2%3D%22411.4286%22%20y2%3D%22-271.4286%22%20stroke-opacity%3D%220.4%22%20%2F%3E%20%3Cline%20x1%3D%22269.8851%22%20y1%3D%22239.2619%22%20x2%3D%22281.1336%22%20y2%3D%22191.417%22%20stroke-opacity%3D%220.05%22%20%2F%3E%20%3Cline%20x1%3D%22115.4067%22%20y1%3D%22315.2004%22%20x2%3D%22128.4507%22%20y2%3D%22259.7183%22%20stroke-opacity%3D%220.37%22%20%2F%3E%20%3Cline%20x1%3D%2252.8186%22%20y1%3D%22-26.2779%22%20x2%3D%2265.6221%22%20y2%3D%22-80.7373%22%20stroke-opacity%3D%220.33%22%20%2F%3E%20%3Cline%20x1%3D%22632.7582%22%20y1%3D%22341.3873%22%20x2%3D%22644.8908%22%20y2%3D%22289.7817%22%20stroke-opacity%3D%220.21%22%20%2F%3E%20%3Cline%20x1%3D%22593.0293%22%20y1%3D%22229.6755%22%20x2%3D%22607.5%22%20y2%3D%22168.125%22%20stroke-opacity%3D%220.58%22%20%2F%3E%20%3Cline%20x1%3D%22328.9059%22%20y1%3D%22-165.2084%22%20x2%3D%22341.1454%22%20y2%3D%22-217.2687%22%20stroke-opacity%3D%220.23%22%20%2F%3E%20%3Cline%20x1%3D%22203.0938%22%20y1%3D%22-19.4804%22%20x2%3D%22217.8723%22%20y2%3D%22-82.3404%22%20stroke-opacity%3D%220.62%22%20%2F%3E%20%3Cline%20x1%3D%22278.596%22%20y1%3D%22470.7788%22%20x2%3D%22290.1245%22%20y2%3D%22421.7427%22%20stroke-opacity%3D%220.09%22%20%2F%3E%20%3Cline%20x1%3D%22290.7437%22%20y1%3D%22-137.3012%22%20x2%3D%22306.4407%22%20y2%3D%22-204.0678%22%20stroke-opacity%3D%220.73%22%20%2F%3E%20%3Cline%20x1%3D%2261.9728%22%20y1%3D%22-160.7791%22%20x2%3D%2273.8462%22%20y2%3D%22-211.2821%22%20stroke-opacity%3D%220.16%22%20%2F%3E%20%3Cline%20x1%3D%22644.7206%22%20y1%3D%22201.3492%22%20x2%3D%22659.267%22%20y2%3D%22139.4764%22%20stroke-opacity%3D%220.59%22%20%2F%3E%20%3Cline%20x1%3D%22508.4742%22%20y1%3D%22562.8449%22%20x2%3D%22523.1746%22%20y2%3D%22500.3175%22%20stroke-opacity%3D%220.61%22%20%2F%3E%20%3Cline%20x1%3D%22215.8887%22%20y1%3D%2231.6224%22%20x2%3D%22232.7273%22%20y2%3D%22-40.0%22%20stroke-opacity%3D%220.85%22%20%2F%3E%20%3Cline%20x1%3D%2276.8926%22%20y1%3D%22474.2598%22%20x2%3D%2290.8543%22%20y2%3D%22414.8744%22%20stroke-opacity%3D%220.51%22%20%2F%3E%20%3Cline%20x1%3D%22680.985%22%20y1%3D%22151.1897%22%20x2%3D%22693.3333%22%20y2%3D%2298.6667%22%20stroke-opacity%3D%220.25%22%20%2F%3E%20%3Cline%20x1%3D%22-25.813%22%20y1%3D%22394.1709%22%20x2%3D%22-14.4262%22%20y2%3D%22345.7377%22%20stroke-opacity%3D%220.06%22%20%2F%3E%20%3Cline%20x1%3D%22399.4162%22%20y1%3D%22148.0915%22%20x2%3D%22411.1392%22%20y2%3D%2298.2278%22%20stroke-opacity%3D%220.13%22%20%2F%3E%20%3Cline%20x1%3D%22358.4235%22%20y1%3D%22246.7404%22%20x2%3D%22370.0%22%20y2%3D%22197.5%22%20stroke-opacity%3D%220.1%22%20%2F%3E%20%3Cline%20x1%3D%22624.5646%22%20y1%3D%22388.9872%22%20x2%3D%22640.0%22%20y2%3D%22323.3333%22%20stroke-opacity%3D%220.7%22%20%2F%3E%20%3Cline%20x1%3D%22413.4775%22%20y1%3D%22-481.2154%22%20x2%3D%22432.0%22%20y2%3D%22-560.0%22%20stroke-opacity%3D%221.0%22%20%2F%3E%20%3Cline%20x1%3D%22193.6872%22%20y1%3D%2215.2212%22%20x2%3D%22208.0829%22%20y2%3D%22-46.0104%22%20stroke-opacity%3D%220.57%22%20%2F%3E%20%3Cline%20x1%3D%22597.3099%22%20y1%3D%22130.3149%22%20x2%3D%22610.2326%22%20y2%3D%2275.3488%22%20stroke-opacity%3D%220.35%22%20%2F%3E%20%3Cline%20x1%3D%22142.5934%22%20y1%3D%22137.8522%22%20x2%3D%22158.2022%22%20y2%3D%2271.4607%22%20stroke-opacity%3D%220.72%22%20%2F%3E%20%3Cline%20x1%3D%22318.089%22%20y1%3D%22-206.3753%22%20x2%3D%22332.1212%22%20y2%3D%22-266.0606%22%20stroke-opacity%3D%220.52%22%20%2F%3E%20%3Cline%20x1%3D%22-55.9135%22%20y1%3D%22368.8708%22%20x2%3D%22-44.8%22%20y2%3D%22321.6%22%20stroke-opacity%3D%220.05%22%20%2F%3E%20%3Cline%20x1%3D%22599.1459%22%20y1%3D%22-316.6809%22%20x2%3D%22616.2963%22%20y2%3D%22-389.6296%22%20stroke-opacity%3D%220.88%22%20%2F%3E%20%3Cline%20x1%3D%22341.2578%22%20y1%3D%22221.8158%22%20x2%3D%22354.6154%22%20y2%3D%22165.0%22%20stroke-opacity%3D%220.42%22%20%2F%3E%20%3Cline%20x1%3D%22-124.5945%22%20y1%3D%22511.169%22%20x2%3D%22-106.3158%22%20y2%3D%22433.4211%22%20stroke-opacity%3D%220.98%22%20%2F%3E%20%3Cline%20x1%3D%22210.7005%22%20y1%3D%22422.9294%22%20x2%3D%22222.0408%22%20y2%3D%22374.6939%22%20stroke-opacity%3D%220.05%22%20%2F%3E%20%3Cline%20x1%3D%22199.8873%22%20y1%3D%22-103.4497%22%20x2%3D%22216.9325%22%20y2%3D%22-175.9509%22%20stroke-opacity%3D%220.87%22%20%2F%3E%20%3Cline%20x1%3D%22672.0308%22%20y1%3D%22-16.7339%22%20x2%3D%22687.2131%22%20y2%3D%22-81.3115%22%20stroke-opacity%3D%220.67%22%20%2F%3E%20%3Cline%20x1%3D%22147.3469%22%20y1%3D%22-80.6054%22%20x2%3D%22163.787%22%20y2%3D%22-150.5325%22%20stroke-opacity%3D%220.81%22%20%2F%3E%20%3Cline%20x1%3D%2299.3612%22%20y1%3D%2275.1798%22%20x2%3D%22117.4026%22%20y2%3D%22-1.5584%22%20stroke-opacity%3D%220.96%22%20%2F%3E%20%3Cline%20x1%3D%22784.9149%22%20y1%3D%22-160.844%22%20x2%3D%22797.7778%22%20y2%3D%22-215.5556%22%20stroke-opacity%3D%220.34%22%20%2F%3E%20%3Cline%20x1%3D%22743.7519%22%20y1%3D%22-151.0458%22%20x2%3D%22757.4384%22%20y2%3D%22-209.2611%22%20stroke-opacity%3D%220.47%22%20%2F%3E%20%3Cline%20x1%3D%2286.6073%22%20y1%3D%2256.3335%22%20x2%3D%22100.7107%22%20y2%3D%22-3.6548%22%20stroke-opacity%3D%220.53%22%20%2F%3E%20%3Cline%20x1%3D%22526.1542%22%20y1%3D%22301.5485%22%20x2%3D%22538.1818%22%20y2%3D%22250.3896%22%20stroke-opacity%3D%220.19%22%20%2F%3E%20%3Cline%20x1%3D%22531.9561%22%20y1%3D%22-195.5182%22%20x2%3D%22543.7288%22%20y2%3D%22-245.5932%22%20stroke-opacity%3D%220.14%22%20%2F%3E%20%3Cline%20x1%3D%22732.8256%22%20y1%3D%22-39.0105%22%20x2%3D%22745.4545%22%20y2%3D%22-92.7273%22%20stroke-opacity%3D%220.3%22%20%2F%3E%20%3Cline%20x1%3D%22634.9857%22%20y1%3D%22361.7774%22%20x2%3D%22646.8085%22%20y2%3D%22311.4894%22%20stroke-opacity%3D%220.15%22%20%2F%3E%20%3Cline%20x1%3D%22656.0273%22%20y1%3D%22-232.7296%22%20x2%3D%22669.5146%22%20y2%3D%22-290.0971%22%20stroke-opacity%3D%220.44%22%20%2F%3E%20%3Cline%20x1%3D%22307.9201%22%20y1%3D%22-81.6622%22%20x2%3D%22320.0%22%20y2%3D%22-133.0435%22%20stroke-opacity%3D%220.2%22%20%2F%3E%20%3Cline%20x1%3D%22573.193%22%20y1%3D%22374.5916%22%20x2%3D%22585.4867%22%20y2%3D%22322.3009%22%20stroke-opacity%3D%220.24%22%20%2F%3E%20%3Cline%20x1%3D%2234.0948%22%20y1%3D%22500.3102%22%20x2%3D%2249.0323%22%20y2%3D%22436.7742%22%20stroke-opacity%3D%220.64%22%20%2F%3E%20%3Cline%20x1%3D%22714.1081%22%20y1%3D%22-12.9115%22%20x2%3D%22728.0%22%20y2%3D%22-72.0%22%20stroke-opacity%3D%220.5%22%20%2F%3E%20%3Cline%20x1%3D%22109.7204%22%20y1%3D%22186.9231%22%20x2%3D%22125.7803%22%20y2%3D%22118.6127%22%20stroke-opacity%3D%220.77%22%20%2F%3E%20%3Cline%20x1%3D%22-116.0143%22%20y1%3D%22596.7331%22%20x2%3D%22-99.2771%22%20y2%3D%22525.5422%22%20stroke-opacity%3D%220.84%22%20%2F%3E%20%3Cline%20x1%3D%2232.0258%22%20y1%3D%22321.7325%22%20x2%3D%2244.7706%22%20y2%3D%22267.5229%22%20stroke-opacity%3D%220.32%22%20%2F%3E%20%3Cline%20x1%3D%224.2138%22%20y1%3D%22208.2823%22%20x2%3D%2220.0%22%20y2%3D%22141.1364%22%20stroke-opacity%3D%220.74%22%20%2F%3E%3C%2Fsvg%3E');
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body {
+	background-color: var(--gray-999);
+	font-family: var(--font-body);
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: var(--link-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	line-height: 1.1;
+	font-family: var(--font-brand);
+	font-weight: 600;
+	color: var(--gray-100);
+}
+
+h1 {
+	font-size: var(--text-5xl);
+}
+
+h2 {
+	font-size: var(--text-4xl);
+}
+
+h3 {
+	font-size: var(--text-3xl);
+}
+
+h4 {
+	font-size: var(--text-2xl);
+}
+
+h5 {
+	font-size: var(--text-xl);
+}
+
+/* Utilities */
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 83rem;
+	margin-inline: auto;
+	padding-inline: 1.5rem;
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+}
+
+.gap-2 {
+	gap: 0.5rem;
+}
+
+.gap-4 {
+	gap: 1rem;
+}
+
+.gap-8 {
+	gap: 2rem;
+}
+
+.gap-10 {
+	gap: 2.5rem;
+}
+
+.gap-15 {
+	gap: 3.75rem;
+}
+
+.gap-20 {
+	gap: 5rem;
+}
+
+.gap-30 {
+	gap: 7.5rem;
+}
+
+.gap-48 {
+	gap: 12rem;
+}
+
+@media (min-width: 50em) {
+	.lg\:gap-2 {
+		gap: 0.5rem;
+	}
+
+	.lg\:gap-4 {
+		gap: 1rem;
+	}
+
+	.lg\:gap-8 {
+		gap: 2rem;
+	}
+
+	.lg\:gap-10 {
+		gap: 2.5rem;
+	}
+
+	.lg\:gap-15 {
+		gap: 3.75rem;
+	}
+
+	.lg\:gap-20 {
+		gap: 5rem;
+	}
+
+	.lg\:gap-30 {
+		gap: 7.5rem;
+	}
+
+	.lg\:gap-48 {
+		gap: 12rem;
+	}
+}
