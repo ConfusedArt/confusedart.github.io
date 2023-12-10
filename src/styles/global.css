@@ -133,8 +133,12 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
+  transition: border-radius 0.3s;
 }
-
+img:hover {
+  border-radius: 0;
+}
 a {
   color: var(--link-color);
 }
