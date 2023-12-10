@@ -1,94 +1,56 @@
 ---
+import Icon from "./Icon.astro";
+import { socialLinks } from "../util/consts";
 interface Props {
-	title: string;
-	tagline?: string;
-	align?: "start" | "center";
+  title: string;
+  tagline?: string;
 }
 
-const { align = "center", tagline, title } = Astro.props;
+const { tagline, title } = Astro.props;
 ---
 
-<header class:list={["hero stack gap-4", align]}>
-	<div class="stack gap-2">
-		<h1 class="title">{title}</h1>
-		{tagline && <p class="tagline">{tagline}</p>}
-	</div>
-	<slot />
+<header class:list={["hero stack gap-4 center"]}>
+  <div class="stack gap-2">
+    <h1 class="title">{title}</h1>
+    {tagline && <p class="tagline">{tagline}</p>}
+    <div class="socials flex gap-2">
+      {
+        socialLinks.map(({ href, icon }) => (
+          <a href={href} class="social" target="_blank">
+            <Icon icon={icon} color="var(--neon-pink)" size="24" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+  <slot />
 </header>
 
 <style>
-	.hero {
-		font-size: var(--text-lg);
-		text-align: center;
-	}
+  .hero {
+    font-size: var(--text-lg);
+    text-align: center;
+  }
 
-	.title,
-	.tagline {
-		border-bottom-color: rgb(255, 56, 236);
-		border-bottom-width: 0px;
-		border-image-outset: 0;
-		border-image-repeat: stretch;
-		border-image-slice: 100%;
-		border-image-source: none;
-		border-image-width: 1;
-		border-left-color: rgb(255, 56, 236);
-		border-left-style: none;
-		border-left-width: 0px;
-		border-right-color: rgb(255, 56, 236);
-		border-right-style: none;
-		border-right-width: 0px;
-		border-top-color: rgb(255, 56, 236);
-		border-top-style: none;
-		border-top-width: 0px;
-		box-sizing: border-box;
-		color: rgb(255, 56, 236);
-		border-bottom-style: none;
+  .title,
+  .tagline {
+    color: var(--neon-pink);
+  }
 
-		margin-inline: auto;
-	}
+  .center {
+    align-items: center;
+  }
 
-	.title {
-		border-bottom-color: #38ecff;
-		border-bottom-width: 0px;
-		border-image-outset: 0;
-		border-image-repeat: stretch;
-		border-image-slice: 100%;
-		border-image-source: none;
-		border-image-width: 1;
-		border-left-color: #38ecff;
-		border-left-style: none;
-		border-left-width: 0px;
-		border-right-color: #38ecff;
-		border-right-style: none;
-		border-right-width: 0px;
-		border-top-color: #38ecff;
-		border-top-style: none;
-		border-top-width: 0px;
-		box-sizing: border-box;
-		color: #38ecff;
-		font-size: var(--text-3xl);
-	}
+  .socials {
+    display: flex;
+  }
 
-	.center {
-		align-items: center;
-	}
-
-	@media (min-width: 50em) {
-		.hero {
-			font-size: var(--text-xl);
-		}
-
-		.start {
-			text-align: start;
-		}
-
-		.start .title,
-		.start .tagline {
-			margin-inline: unset;
-		}
-
-		.title {
-			font-size: var(--text-5xl);
-		}
-	}
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 32px;
+    color: var(--neon-pink);
+  }
 </style>

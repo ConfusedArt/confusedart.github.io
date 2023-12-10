@@ -4,23 +4,28 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
-	title?: string;
-	description?: string;
-	img?: ImageMetadata;
+  title?: string;
+  description?: string;
+  img?: ImageMetadata;
 }
 
 const { title, description, img } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} image={img} />
-	</head>
-	<body>
-		<div class="stack">
-			<Nav />
-			<slot />
-			<Footer />
-		</div>
-	</body>
+  <head>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <BaseHead title={title} description={description} image={img} />
+  </head>
+  <body>
+    <div class="stack">
+      <div class="blob"></div>
+      <Nav />
+      <slot />
+      <Footer />
+    </div>
+  </body>
 </html>
