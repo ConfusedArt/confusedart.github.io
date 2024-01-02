@@ -47,6 +47,9 @@ const images = await Astro.glob("/src/images/art/*").then((files) => {
     align-items: flex-start;
     gap: 2rem;
     height: 20vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   .section {
@@ -89,18 +92,3 @@ const images = await Astro.glob("/src/images/art/*").then((files) => {
     }
   }
 </style>
-
-<script>
-  document.body.onpointermove = (event) => {
-    const blob = document.getElementsByClassName("blob")[0]; // Access the first element in the collection
-    const { clientX, clientY } = event;
-
-    blob.animate(
-      {
-        left: `${clientX}px`,
-        top: `${clientY}px`,
-      },
-      { duration: 4000, fill: "forwards" }
-    );
-  };
-</script>
